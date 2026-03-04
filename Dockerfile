@@ -1,5 +1,7 @@
 FROM node:20-alpine
 
+LABEL org.opencontainers.image.source="https://github.com/orgs/metaid-developers/shownow-backend"
+
 RUN corepack enable && corepack prepare pnpm@9.15.3 --activate
 
 # native 模块（如 better-sqlite3）编译依赖；node-gyp 需要 python
