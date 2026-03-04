@@ -53,7 +53,7 @@ var isEmpty = __webpack_require__(42879);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
-var _umi_production_exports = __webpack_require__(17078);
+var _umi_production_exports = __webpack_require__(93603);
 // EXTERNAL MODULE: ./src/Components/Buzz/index.less
 var Buzz = __webpack_require__(79816);
 // EXTERNAL MODULE: ./src/Components/Buzz/RepostDetail.tsx
@@ -368,8 +368,7 @@ var NewPost = __webpack_require__(4457);
                   isLike: "1",
                   likeTo: pinId
                 }),
-                path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/paylike"),
-                contentType: "application/json;utf-8"
+                path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/paylike")
               },
               options: {
                 network: config/* curNetwork */.eM,
@@ -1412,7 +1411,7 @@ var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerat
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
-var _umi_production_exports = __webpack_require__(17078);
+var _umi_production_exports = __webpack_require__(93603);
 // EXTERNAL MODULE: ./src/Components/ResponPopup/index.tsx + 1 modules
 var ResponPopup = __webpack_require__(47467);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 17 modules
@@ -1480,7 +1479,6 @@ var commentEntitySchema = {
   name: 'comment',
   nodeName: 'paycomment',
   path: '/protocols/paycomment',
-  contentType: "application/json;utf-8",
   versions: [{
     version: 1,
     body: [{
@@ -1579,7 +1577,7 @@ var TextArea = input/* default */.Z.TextArea;
             _context.prev = 7;
             finalBody = {
               content: content,
-              contentType: 'text/plain;utf-8',
+              contentType: 'application/json;utf-8',
               commentTo: tweetId
             };
             console.log('finalBody', finalBody);
@@ -1634,8 +1632,7 @@ var TextArea = input/* default */.Z.TextArea;
             _context.next = 23;
             return Comment.create({
               data: {
-                body: JSON.stringify(finalBody),
-                contentType: 'application/json;utf-8'
+                body: JSON.stringify(finalBody)
               },
               options: {
                 network: config/* curNetwork */.eM,
@@ -1773,14 +1770,14 @@ var TextArea = input/* default */.Z.TextArea;
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   H: function() { return /* binding */ CommentItem; }
 /* harmony export */ });
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90228);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15558);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(87999);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(48305);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90228);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15558);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(87999);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(48305);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9807);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(10991);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(46116);
@@ -1791,7 +1788,7 @@ var TextArea = input/* default */.Z.TextArea;
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(33713);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(17675);
 /* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(27465);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(17078);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(93603);
 /* harmony import */ var _UserInfo_PendingUser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(69101);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(81707);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(16036);
@@ -1845,60 +1842,60 @@ var CommentItem = function CommentItem(_ref) {
     feeRate = _useModel.feeRate,
     mvcFeeRate = _useModel.mvcFeeRate;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(false),
-    _useState2 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState, 2),
+    _useState2 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState, 2),
     showDonate = _useState2[0],
     setShowDonate = _useState2[1];
   var _useModel2 = (0,umi__WEBPACK_IMPORTED_MODULE_5__.useModel)('dashboard'),
     showConf = _useModel2.showConf,
     fetchServiceFee = _useModel2.fetchServiceFee;
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(item.likeNum),
-    _useState4 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState3, 2),
+    _useState4 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState3, 2),
     likeCount = _useState4[0],
     setLikeCount = _useState4[1];
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(item.donateNum),
-    _useState6 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState5, 2),
+    _useState6 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState5, 2),
     donateCount = _useState6[0],
     setDonateCount = _useState6[1];
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)((_item$likeAddress = item.likeAddress) !== null && _item$likeAddress !== void 0 ? _item$likeAddress : []),
-    _useState8 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState7, 2),
+    _useState8 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState7, 2),
     likeAddress = _useState8[0],
     setLikeAddress = _useState8[1];
   var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(item.forwardNum),
-    _useState10 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState9, 2),
+    _useState10 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState9, 2),
     forwardCount = _useState10[0],
     setForwardCount = _useState10[1];
   var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(item.commentNum),
-    _useState12 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState11, 2),
+    _useState12 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState11, 2),
     commentCount = _useState12[0],
     setCommentCount = _useState12[1];
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(false),
-    _useState14 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState13, 2),
+    _useState14 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState13, 2),
     handleLikeLoading = _useState14[0],
     setHandleLikeLoading = _useState14[1];
   var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(false),
-    _useState16 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState15, 2),
+    _useState16 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState15, 2),
     showChildComment = _useState16[0],
     setShowChildComment = _useState16[1];
   var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)([]),
-    _useState18 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState17, 2),
+    _useState18 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState17, 2),
     childComment = _useState18[0],
     setChildComment = _useState18[1];
   var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(false),
-    _useState20 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState19, 2),
+    _useState20 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState19, 2),
     showComment = _useState20[0],
     setShowComment = _useState20[1];
   var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(false),
-    _useState22 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState21, 2),
+    _useState22 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState21, 2),
     loading = _useState22[0],
     setLoading = _useState22[1];
   var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(false),
-    _useState24 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState23, 2),
+    _useState24 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState23, 2),
     showNewPost = _useState24[0],
     setShowNewPost = _useState24[1];
   var handleLike = /*#__PURE__*/function () {
-    var _ref2 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee() {
+    var _ref2 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default()( /*#__PURE__*/_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee() {
       var pinId, likeEntity, likeRes, _likeEntity, _likeRes, _message, errorMessage, toastMessage;
-      return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee$(_context) {
+      return _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             if (isLogin) {
@@ -1947,7 +1944,7 @@ var CommentItem = function CommentItem(_ref) {
             likeRes = _context.sent;
             if (!(0,ramda__WEBPACK_IMPORTED_MODULE_18__/* ["default"] */ .Z)(likeRes === null || likeRes === void 0 ? void 0 : likeRes.revealTxIds[0])) {
               setLikeCount(likeCount + 1);
-              setLikeAddress([].concat(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1___default()(likeAddress), [user.address]));
+              setLikeAddress([].concat(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1___default()(likeAddress), [user.address]));
               antd__WEBPACK_IMPORTED_MODULE_17__/* ["default"] */ .ZP.success("like buzz successfully");
             }
             _context.next = 27;
@@ -1964,7 +1961,6 @@ var CommentItem = function CommentItem(_ref) {
                   isLike: "1",
                   likeTo: pinId
                 }),
-                contentType: "application/json;utf-8",
                 path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/paylike")
               },
               options: {
@@ -1979,7 +1975,7 @@ var CommentItem = function CommentItem(_ref) {
             console.log("likeRes", _likeRes);
             if (!(0,ramda__WEBPACK_IMPORTED_MODULE_18__/* ["default"] */ .Z)(_likeRes === null || _likeRes === void 0 ? void 0 : _likeRes.txid)) {
               setLikeCount(likeCount + 1);
-              setLikeAddress([].concat(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1___default()(likeAddress), [user.address]));
+              setLikeAddress([].concat(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1___default()(likeAddress), [user.address]));
               antd__WEBPACK_IMPORTED_MODULE_17__/* ["default"] */ .ZP.success("like buzz successfully");
             }
           case 27:
@@ -2005,10 +2001,10 @@ var CommentItem = function CommentItem(_ref) {
     };
   }();
   var loadChildComment = /*#__PURE__*/function () {
-    var _ref3 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee2() {
+    var _ref3 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default()( /*#__PURE__*/_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee2() {
       var _commentRes$data;
       var commentRes, _commentRes$data$comm, list, commentSet;
-      return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee2$(_context2) {
+      return _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
             setLoading(true);
@@ -2019,7 +2015,7 @@ var CommentItem = function CommentItem(_ref) {
           case 3:
             commentRes = _context2.sent;
             if (commentRes && (_commentRes$data = commentRes.data) !== null && _commentRes$data !== void 0 && _commentRes$data.comments) {
-              list = [].concat(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1___default()((_commentRes$data$comm = commentRes.data.comments) !== null && _commentRes$data$comm !== void 0 ? _commentRes$data$comm : []), _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1___default()(childComment));
+              list = [].concat(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1___default()((_commentRes$data$comm = commentRes.data.comments) !== null && _commentRes$data$comm !== void 0 ? _commentRes$data$comm : []), _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1___default()(childComment));
               commentSet = new Set();
               list = list.filter(function (comment) {
                 if (commentSet.has(comment.pinId)) {
@@ -2093,8 +2089,8 @@ var CommentItem = function CommentItem(_ref) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(antd__WEBPACK_IMPORTED_MODULE_21__/* ["default"] */ .ZP, {
           type: "text",
           icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_24__/* ["default"] */ .Z, {}),
-          onClick: /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee3() {
-            return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee3$(_context3) {
+          onClick: /*#__PURE__*/_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default()( /*#__PURE__*/_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee3() {
+            return _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee3$(_context3) {
               while (1) switch (_context3.prev = _context3.next) {
                 case 0:
                   if (isLogin) {
@@ -2212,8 +2208,8 @@ var CommentItem = function CommentItem(_ref) {
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(antd__WEBPACK_IMPORTED_MODULE_21__/* ["default"] */ .ZP, {
                     type: "text",
                     icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_24__/* ["default"] */ .Z, {}),
-                    onClick: /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee4() {
-                      return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee4$(_context4) {
+                    onClick: /*#__PURE__*/_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default()( /*#__PURE__*/_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee4() {
+                      return _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee4$(_context4) {
                         while (1) switch (_context4.prev = _context4.next) {
                           case 0:
                             if (isLogin) {
@@ -2284,7 +2280,7 @@ var CommentItem = function CommentItem(_ref) {
       onClose: function onClose(mockComment) {
         setShowComment(false);
         if (mockComment) {
-          setChildComment([].concat(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1___default()(childComment), [mockComment]));
+          setChildComment([].concat(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_1___default()(childComment), [mockComment]));
           setCommentCount(commentCount + 1);
           setShowChildComment(true);
         }
@@ -2330,12 +2326,12 @@ var CommentItem = function CommentItem(_ref) {
 /***/ 89614:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90228);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(87999);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(48305);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90228);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(87999);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(48305);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _UserInfo_PendingUser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(69101);
 /* harmony import */ var _ResponPopup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(47467);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(46116);
@@ -2345,7 +2341,7 @@ var CommentItem = function CommentItem(_ref) {
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(37390);
 /* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(25688);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(75271);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(17078);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(93603);
 /* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(72898);
 /* harmony import */ var _assets_btc_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(33401);
 /* harmony import */ var _assets_mvc_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(61133);
@@ -2391,30 +2387,30 @@ var CommentItem = function CommentItem(_ref) {
     showConf = _useModel2.showConf,
     fetchServiceFee = _useModel2.fetchServiceFee;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(''),
-    _useState2 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState, 2),
+    _useState2 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState, 2),
     donateAmount = _useState2[0],
     setDonateAmount = _useState2[1];
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(''),
-    _useState4 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState3, 2),
+    _useState4 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState3, 2),
     donateMessage = _useState4[0],
     setDonateMessage = _useState4[1];
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(0),
-    _useState6 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState5, 2),
+    _useState6 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState5, 2),
     balance = _useState6[0],
     setBalance = _useState6[1];
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(false),
-    _useState8 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState7, 2),
+    _useState8 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState7, 2),
     paying = _useState8[0],
     setPaying = _useState8[1];
   var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)((0,_utils_utils__WEBPACK_IMPORTED_MODULE_8__/* .determineAddressInfo */ .uY)(donateAddress) === 'p2pkh' ? chain : 'btc'),
-    _useState10 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState9, 2),
+    _useState10 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState9, 2),
     selectedChain = _useState10[0],
     setSelectedChain = _useState10[1];
   (0,react__WEBPACK_IMPORTED_MODULE_6__.useEffect)(function () {
     var fetchBalance = /*#__PURE__*/function () {
-      var _ref2 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee() {
+      var _ref2 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee() {
         var bal, _bal;
-        return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee$(_context) {
+        return _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
               if (!(isLogin && selectedChain === "btc")) {
@@ -2469,9 +2465,9 @@ var CommentItem = function CommentItem(_ref) {
     return (0,_utils_utils__WEBPACK_IMPORTED_MODULE_8__/* .determineAddressInfo */ .uY)(donateAddress) === 'p2pkh';
   }, [donateAddress]);
   var onDonate = /*#__PURE__*/function () {
-    var _ref3 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee2() {
+    var _ref3 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee2() {
       var isPass, donateEntity, donateRes, _donateEntity, _donateRes, _message, errorMessage, toastMessage;
-      return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee2$(_context2) {
+      return _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
             if (isLogin) {
@@ -3021,7 +3017,7 @@ var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableA
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
-var _umi_production_exports = __webpack_require__(17078);
+var _umi_production_exports = __webpack_require__(93603);
 // EXTERNAL MODULE: ./src/Components/ResponPopup/index.tsx + 1 modules
 var ResponPopup = __webpack_require__(47467);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/input/index.js + 6 modules
@@ -3978,7 +3974,7 @@ var getBase64 = function getBase64(img, callback) {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             finalBody = {
               content: buzz.content,
-              contentType: 'text/plain;utf-8'
+              contentType: 'application/json;utf-8'
               // mentions: mentions || {}
             };
             if (!(video && chainNet === 'mvc')) {
@@ -4269,7 +4265,7 @@ var getBase64 = function getBase64(img, callback) {
             }
             console.log('finalBody', {
               body: JSON.stringify(finalBody),
-              contentType: 'text/plain;utf-8',
+              contentType: 'application/json;utf-8',
               flag: config/* FLAG */.BZ,
               path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/protocols/simplebuzz")
             });
@@ -4391,8 +4387,7 @@ var getBase64 = function getBase64(img, callback) {
             _context4.next = 86;
             return _buzzEntity.create({
               data: {
-                body: JSON.stringify(objectSpread2_default()({}, finalBody)),
-                contentType: 'application/json;utf-8'
+                body: JSON.stringify(objectSpread2_default()({}, finalBody))
               },
               options: {
                 network: config/* curNetwork */.eM,
@@ -5473,14 +5468,13 @@ var NumberFormat = function NumberFormat(props) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Q: function() { return /* binding */ getBuzzSchemaWithCustomHost; }
 /* harmony export */ });
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(26068);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(26068);
+/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__);
 
 var buzzSchema = {
   name: "buzz",
   nodeName: "simplebuzz",
   path: "/protocols/simplebuzz",
-  contentType: "application/json;utf-8",
   versions: [{
     version: 1,
     body: [{
@@ -5500,7 +5494,7 @@ var buzzSchema = {
 };
 /* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = ((/* unused pure expression or super */ null && (buzzSchema)));
 var getBuzzSchemaWithCustomHost = function getBuzzSchemaWithCustomHost(host) {
-  return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({}, buzzSchema), {}, {
+  return _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({}, buzzSchema), {}, {
     path: "".concat(host).concat(buzzSchema.path)
   });
 };
