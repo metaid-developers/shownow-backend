@@ -11,6 +11,9 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read   # 拉取代码
+      packages: write  # 推送镜像到 ghcr.io 必需
     steps:
       - name: Checkout
         uses: actions/checkout@v2
