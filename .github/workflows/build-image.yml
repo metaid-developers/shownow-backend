@@ -34,4 +34,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/metaso-labs/shownow-backend:${{ github.event.inputs.tag || github.ref_name }}
+          tags: ghcr.io/${{ github.repository_owner }}/shownow-backend:${{ github.event.inputs.tag || github.ref_name }}
