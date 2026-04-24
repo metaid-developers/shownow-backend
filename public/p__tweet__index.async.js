@@ -8,12 +8,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   TweetCard: function() { return /* binding */ TweetCard; }
 /* harmony export */ });
-/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15558);
-/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(26068);
-/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(48305);
-/* harmony import */ var _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15558);
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(26068);
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(48305);
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Components_Buzz__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(53982);
 /* harmony import */ var _Components_Buzz_BlockedBuzz__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(15831);
 /* harmony import */ var _Components_Comment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(79684);
@@ -67,19 +67,19 @@ var TweetCard = function TweetCard(_ref) {
   var _useModel2 = (0,umi__WEBPACK_IMPORTED_MODULE_11__.useModel)('dashboard'),
     showConf = _useModel2.showConf;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(0),
-    _useState2 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState, 2),
+    _useState2 = _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState, 2),
     refetchNum = _useState2[0],
     setRefetchNum = _useState2[1];
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(false),
-    _useState4 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState3, 2),
+    _useState4 = _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState3, 2),
     reLoading = _useState4[0],
     setReLoading = _useState4[1];
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(false),
-    _useState6 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState5, 2),
+    _useState6 = _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState5, 2),
     showComment = _useState6[0],
     setShowComment = _useState6[1];
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)([]),
-    _useState8 = _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState7, 2),
+    _useState8 = _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState7, 2),
     commentData = _useState8[0],
     setCommentData = _useState8[1];
   var _useQuery = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_13__/* .useQuery */ .a)({
@@ -136,7 +136,7 @@ var TweetCard = function TweetCard(_ref) {
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.Fragment, {
       children: buzzDetail.data.blocked && buzzDetail.data.tweet.createMetaId !== user.metaid ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Components_Buzz_BlockedBuzz__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Components_Buzz__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
-          buzzItem: _Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1___default()(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1___default()({}, buzzDetail.data.tweet), {}, {
+          buzzItem: _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1___default()(_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1___default()({}, buzzDetail.data.tweet), {}, {
             blocked: buzzDetail.data.blocked
           }),
           showActions: true,
@@ -202,7 +202,7 @@ var TweetCard = function TweetCard(_ref) {
             setShowComment(false);
             if (mockComment) {
               console.log(mockComment, 'mockComment');
-              setCommentData([].concat(_Users_wuyingshan520_Downloads_code_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0___default()(commentData), [mockComment]));
+              setCommentData([].concat(_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0___default()(commentData), [mockComment]));
             }
           },
           show: showComment
