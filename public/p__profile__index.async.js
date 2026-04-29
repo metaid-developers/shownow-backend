@@ -91,7 +91,7 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 /* harmony default export */ var Components_ProfileCard = (function (_ref) {
-  var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16, _profileUserData$data17, _profileUserData$data18, _profileUserData$data19, _profileUserData$data20, _profileUserData$data23;
+  var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16, _profileUserData$data19;
   var address = _ref.address,
     IDCoin = _ref.IDCoin;
   var _useModel = (0,_umi_production_exports.useModel)('user'),
@@ -145,6 +145,11 @@ var jsx_runtime = __webpack_require__(52676);
       }
     }),
     followerListData = _useQuery2.data;
+  var profileUser = profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.data;
+  var globalMetaId = (profileUser === null || profileUser === void 0 ? void 0 : profileUser.globalMetaId) || '';
+  var metaid = (profileUser === null || profileUser === void 0 ? void 0 : profileUser.metaid) || '';
+  var shortGlobalMetaId = globalMetaId ? globalMetaId.slice(0, 12) : '-';
+  var shortMetaid = metaid ? metaid.slice(0, 8) : '-';
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
     style: {
       padding: 0
@@ -211,16 +216,23 @@ var jsx_runtime = __webpack_require__(52676);
             marginTop: 10
           },
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)("h3", {
-            children: profileUserData === null || profileUserData === void 0 || (_profileUserData$data14 = profileUserData.data) === null || _profileUserData$data14 === void 0 ? void 0 : _profileUserData$data14.name
+            children: profileUser === null || profileUser === void 0 ? void 0 : profileUser.name
+          }), /*#__PURE__*/(0,jsx_runtime.jsxs)("p", {
+            children: ["GlobalMetaID: ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+              copyable: globalMetaId ? {
+                text: globalMetaId
+              } : false,
+              children: shortGlobalMetaId
+            })]
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)("p", {
             children: ["MetaID: ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
-              copyable: {
-                text: profileUserData === null || profileUserData === void 0 || (_profileUserData$data15 = profileUserData.data) === null || _profileUserData$data15 === void 0 ? void 0 : _profileUserData$data15.metaid
-              },
+              copyable: metaid ? {
+                text: metaid
+              } : false,
               target: "_blank",
               underline: true,
-              href: "".concat(config/* curNetwork */.eM === 'mainnet' ? 'https://metaid.io/' : 'https://metaid-testnet.vercel.app/', "metaid-detail/").concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data16 = profileUserData.data) === null || _profileUserData$data16 === void 0 ? void 0 : _profileUserData$data16.metaid),
-              children: profileUserData === null || profileUserData === void 0 || (_profileUserData$data17 = profileUserData.data) === null || _profileUserData$data17 === void 0 ? void 0 : _profileUserData$data17.metaid.slice(0, 8)
+              href: metaid ? "".concat(config/* curNetwork */.eM === 'mainnet' ? 'https://metaid.io/' : 'https://metaid-testnet.vercel.app/', "metaid-detail/").concat(metaid) : undefined,
+              children: shortMetaid
             })]
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)("p", {
             children: ["Address: ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
@@ -231,7 +243,7 @@ var jsx_runtime = __webpack_require__(52676);
             })]
           })]
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(Follow/* FollowButtonComponent */.I, {
-          metaid: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data18 = profileUserData.data) === null || _profileUserData$data18 === void 0 ? void 0 : _profileUserData$data18.metaid) || ''
+          metaid: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data14 = profileUserData.data) === null || _profileUserData$data14 === void 0 ? void 0 : _profileUserData$data14.metaid) || ''
         }), address === user.address && /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
           icon: /*#__PURE__*/(0,jsx_runtime.jsx)(EditOutlined/* default */.Z, {}),
           variant: "filled",
@@ -254,7 +266,7 @@ var jsx_runtime = __webpack_require__(52676);
         style: {
           fontSize: 13
         },
-        children: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data19 = profileUserData.data) === null || _profileUserData$data19 === void 0 ? void 0 : _profileUserData$data19.bio) || '-'
+        children: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data15 = profileUserData.data) === null || _profileUserData$data15 === void 0 ? void 0 : _profileUserData$data15.bio) || '-'
       }), IDCoin && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
           type: "secondary",
@@ -281,7 +293,7 @@ var jsx_runtime = __webpack_require__(52676);
           },
           children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
-              src: profileUserData === null || profileUserData === void 0 || (_profileUserData$data20 = profileUserData.data) === null || _profileUserData$data20 === void 0 ? void 0 : _profileUserData$data20.avatar,
+              src: profileUserData === null || profileUserData === void 0 || (_profileUserData$data16 = profileUserData.data) === null || _profileUserData$data16 === void 0 ? void 0 : _profileUserData$data16.avatar,
               size: 40
             }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
               direction: "vertical",
@@ -348,8 +360,8 @@ var jsx_runtime = __webpack_require__(52676);
               cursor: 'pointer'
             },
             onClick: function onClick() {
-              var _profileUserData$data21;
-              _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data21 = profileUserData.data) === null || _profileUserData$data21 === void 0 ? void 0 : _profileUserData$data21.metaid, "?type=followers"));
+              var _profileUserData$data17;
+              _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data17 = profileUserData.data) === null || _profileUserData$data17 === void 0 ? void 0 : _profileUserData$data17.metaid, "?type=followers"));
             },
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
               style: {
@@ -368,8 +380,8 @@ var jsx_runtime = __webpack_require__(52676);
               cursor: 'pointer'
             },
             onClick: function onClick() {
-              var _profileUserData$data22;
-              _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data22 = profileUserData.data) === null || _profileUserData$data22 === void 0 ? void 0 : _profileUserData$data22.metaid, "?type=following"));
+              var _profileUserData$data18;
+              _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data18 = profileUserData.data) === null || _profileUserData$data18 === void 0 ? void 0 : _profileUserData$data18.metaid, "?type=following"));
             },
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
               style: {
@@ -384,7 +396,7 @@ var jsx_runtime = __webpack_require__(52676);
           })]
         })
       })]
-    }), (profileUserData === null || profileUserData === void 0 || (_profileUserData$data23 = profileUserData.data) === null || _profileUserData$data23 === void 0 ? void 0 : _profileUserData$data23.blocked) && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
+    }), (profileUserData === null || profileUserData === void 0 || (_profileUserData$data19 = profileUserData.data) === null || _profileUserData$data19 === void 0 ? void 0 : _profileUserData$data19.blocked) && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
       message: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
         children: "This user has been blocked by the administrator."
       }),

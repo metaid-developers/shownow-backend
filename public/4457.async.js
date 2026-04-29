@@ -3108,6 +3108,8 @@ var empty = __webpack_require__(47151);
 var collapse = __webpack_require__(8546);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/CheckOutlined.js + 1 modules
 var CheckOutlined = __webpack_require__(3642);
+// EXTERNAL MODULE: ./src/utils/metafileUrl.ts
+var metafileUrl = __webpack_require__(4842);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/NFTModal/index.tsx
@@ -3193,7 +3195,7 @@ var jsx_runtime = __webpack_require__(52676);
                     try {
                       var img = JSON.parse(atob(nft.content)).attachment[0].content;
                       return objectSpread2_default()(objectSpread2_default()({}, nft), {}, {
-                        previewImage: "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(img.replace('metafile://', ''))
+                        previewImage: (0,metafileUrl/* getMetafileImagePreviewUrl */.EL)(img)
                       });
                     } catch (e) {
                       return nft;

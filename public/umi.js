@@ -5008,7 +5008,7 @@ function stripLastSlash(path) {
 
 /***/ }),
 
-/***/ 51953:
+/***/ 49174:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5139,30 +5139,8 @@ var useIntervalAsync = __webpack_require__(79057);
 var isEmpty = __webpack_require__(42879);
 // EXTERNAL MODULE: ./src/utils/NotificationStore.ts
 var NotificationStore = __webpack_require__(93681);
-;// CONCATENATED MODULE: ./src/utils/userProfile.ts
-function normalizeProfileMediaUrl(value, baseUrl) {
-  if (!value) {
-    return "";
-  }
-  if (/^https?:\/\//i.test(value)) {
-    return value;
-  }
-  return "".concat(baseUrl).concat(value);
-}
-function buildUserState(_ref) {
-  var address = _ref.address,
-    userInfo = _ref.userInfo,
-    profile = _ref.profile,
-    baseUrl = _ref.baseUrl;
-  return {
-    avatar: normalizeProfileMediaUrl(userInfo === null || userInfo === void 0 ? void 0 : userInfo.avatar, baseUrl),
-    background: normalizeProfileMediaUrl(userInfo === null || userInfo === void 0 ? void 0 : userInfo.background, baseUrl),
-    name: (userInfo === null || userInfo === void 0 ? void 0 : userInfo.name) || profile.name || "",
-    metaid: (userInfo === null || userInfo === void 0 ? void 0 : userInfo.metaid) || (userInfo === null || userInfo === void 0 ? void 0 : userInfo.metaId) || "",
-    bio: (userInfo === null || userInfo === void 0 ? void 0 : userInfo.bio) || profile.bio || "",
-    address: address
-  };
-}
+// EXTERNAL MODULE: ./src/utils/userProfile.ts
+var userProfile = __webpack_require__(35021);
 ;// CONCATENATED MODULE: ./src/models/user.ts
 
 
@@ -5375,7 +5353,7 @@ var checkWallet = /*#__PURE__*/function () {
           case 2:
             resolvedUser = _context3.sent;
             profile = getLocalProfile(connector.wallet.address);
-            setUser(buildUserState({
+            setUser((0,userProfile/* buildUserState */.RB)({
               address: connector.wallet.address,
               userInfo: resolvedUser,
               profile: profile,
@@ -5718,7 +5696,7 @@ var checkWallet = /*#__PURE__*/function () {
           });
         case 5:
           userInfo = _context7.sent;
-          setUser(buildUserState({
+          setUser((0,userProfile/* buildUserState */.RB)({
             address: userInfo.address,
             userInfo: userInfo,
             profile: profile,
@@ -8034,8 +8012,8 @@ var UseRequestProvider = configContext.Provider; // UseAPIProvider 已经废弃�
 var UseAPIProvider = (/* unused pure expression or super */ null && (UseRequestProvider));
 
 /* harmony default export */ var es = ((/* unused pure expression or super */ null && (useRequest)));
-// EXTERNAL MODULE: ./src/.umi-production/core/plugin.ts + 10 modules
-var core_plugin = __webpack_require__(51953);
+// EXTERNAL MODULE: ./src/.umi-production/core/plugin.ts + 9 modules
+var core_plugin = __webpack_require__(49174);
 ;// CONCATENATED MODULE: ./src/.umi-production/plugin-request/request.ts
 
 
@@ -13814,8 +13792,8 @@ var provider_IntlProvider = /*#__PURE__*/function (_React$PureComponent) {
 
 provider_IntlProvider.displayName = 'IntlProvider';
 provider_IntlProvider.defaultProps = DEFAULT_INTL_CONFIG;
-// EXTERNAL MODULE: ./src/.umi-production/core/plugin.ts + 10 modules
-var core_plugin = __webpack_require__(51953);
+// EXTERNAL MODULE: ./src/.umi-production/core/plugin.ts + 9 modules
+var core_plugin = __webpack_require__(49174);
 // EXTERNAL MODULE: ./node_modules/.pnpm/event-emitter@0.3.5/node_modules/event-emitter/index.js
 var event_emitter = __webpack_require__(53683);
 var event_emitter_default = /*#__PURE__*/__webpack_require__.n(event_emitter);
@@ -14553,7 +14531,6 @@ function useModel(namespace, selector) {
 /* harmony export */   bq: function() { return /* binding */ AVATAR_BASE_URL; },
 /* harmony export */   eM: function() { return /* binding */ curNetwork; },
 /* harmony export */   h_: function() { return /* binding */ METASO_BASE_API; },
-/* harmony export */   nM: function() { return /* binding */ METAFS_API; },
 /* harmony export */   sB: function() { return /* binding */ DASHBOARD_ADMIN_PUBKEY; },
 /* harmony export */   sw: function() { return /* binding */ METAFS_INDEXER_API; },
 /* harmony export */   tU: function() { return /* binding */ DEFAULT_AVATAR; },
@@ -14562,15 +14539,17 @@ function useModel(namespace, selector) {
 /* harmony export */   xH: function() { return /* binding */ DASHBOARD_SIGNATURE; },
 /* harmony export */   yC: function() { return /* binding */ BASE_MAN_URL; }
 /* harmony export */ });
-/* unused harmony export IMAGESIZE */
+/* unused harmony exports METAFS_API, IMAGESIZE */
 /* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10642);
 /* harmony import */ var _assets_defaultAvatar_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8453);
+/* harmony import */ var _utils_metafileUrl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4842);
+
 
 
 var TESTNET_CONTENT_HOST = "https://man-test.metaid.io";
 var MAINNET_CONTENT_HOST = "https://man.metaid.io";
 var MAINNET_MAN_HOST_V1 = "https://v1man.metaid.io";
-var METAFS_API = "https://file.metaid.io/metafile-indexer/api/v1/files";
+var METAFS_API = (/* unused pure expression or super */ null && (METAFILE_FILES_API));
 var METAFS_INDEXER_API = "https://file.metaid.io/metafile-indexer/api/v1";
 var getHostByNet = function getHostByNet(network) {
   if (network === "testnet") return TESTNET_CONTENT_HOST;
@@ -15012,8 +14991,10 @@ var bitBuzzConf = {
 /* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(87999);
 /* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(78488);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(22258);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(93603);
+/* harmony import */ var _utils_userProfile__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(35021);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(22258);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(93603);
+
 
 
 
@@ -15206,7 +15187,7 @@ function _fetchFollowDetailPin() {
         case 0:
           _context39.prev = 0;
           _context39.next = 3;
-          return axios__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z.get("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/follow/record"), {
+          return axios__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z.get("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/follow/record"), {
             params: params
           }).then(function (res) {
             return res.data;
@@ -15239,7 +15220,7 @@ function _fetchFollowingList() {
           metaid = _ref5.metaid, params = _ref5.params;
           _context40.prev = 1;
           _context40.next = 4;
-          return axios__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z.get("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .AVATAR_BASE_URL */ .bq, "/api/metaid/followingList/").concat(metaid), {
+          return axios__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z.get("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .AVATAR_BASE_URL */ .bq, "/api/metaid/followingList/").concat(metaid), {
             params: params
           }).then(function (res) {
             return res.data;
@@ -15272,7 +15253,7 @@ function _fetchFollowerList() {
           metaid = _ref6.metaid, params = _ref6.params;
           _context41.prev = 1;
           _context41.next = 4;
-          return axios__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z.get("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .AVATAR_BASE_URL */ .bq, "/api/metaid/followerList/").concat(metaid), {
+          return axios__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z.get("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .AVATAR_BASE_URL */ .bq, "/api/metaid/followerList/").concat(metaid), {
             params: params
           }).then(function (res) {
             return res.data;
@@ -15306,7 +15287,7 @@ function _getPinDetailByPid() {
           url = "".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/pin/").concat(pid);
           _context42.prev = 2;
           _context42.next = 5;
-          return axios__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z.get(url).then(function (res) {
+          return axios__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z.get(url).then(function (res) {
             return res.data;
           });
         case 5:
@@ -15534,7 +15515,7 @@ function _getPubKey() {
           url = "".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/access/getPubKey");
           _context49.prev = 1;
           _context49.next = 4;
-          return axios__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z.get(url).then(function (res) {
+          return axios__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z.get(url).then(function (res) {
             return res.data;
           });
         case 4:
@@ -15558,7 +15539,7 @@ var fetchAllBuzzs = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          return _context2.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/newest"), {
+          return _context2.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/newest"), {
             method: "GET",
             params: params
           }));
@@ -15577,7 +15558,7 @@ var fetchAllHotBuzzs = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee3$(_context3) {
       while (1) switch (_context3.prev = _context3.next) {
         case 0:
-          return _context3.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/hot"), {
+          return _context3.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/hot"), {
             method: "GET",
             params: params
           }));
@@ -15596,7 +15577,7 @@ var fetchAllRecommendBuzzs = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee4$(_context4) {
       while (1) switch (_context4.prev = _context4.next) {
         case 0:
-          return _context4.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/recommended"), {
+          return _context4.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/recommended"), {
             method: "GET",
             params: params
           }));
@@ -15615,7 +15596,7 @@ var reportBuzzView = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee5$(_context5) {
       while (1) switch (_context5.prev = _context5.next) {
         case 0:
-          return _context5.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/viewed/add"), {
+          return _context5.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/viewed/add"), {
             method: "POST",
             data: JSON.stringify(params),
             headers: {
@@ -15637,7 +15618,7 @@ var searchBuzzs = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee6$(_context6) {
       while (1) switch (_context6.prev = _context6.next) {
         case 0:
-          return _context6.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/search"), {
+          return _context6.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/search"), {
             method: "GET",
             params: params
           }));
@@ -15656,7 +15637,7 @@ var fetchBuzzDetail = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee7$(_context7) {
       while (1) switch (_context7.prev = _context7.next) {
         case 0:
-          return _context7.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/info"), {
+          return _context7.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/info"), {
             method: "GET",
             params: params
           }));
@@ -15675,7 +15656,7 @@ var getControlByContentPin = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee8$(_context8) {
       while (1) switch (_context8.prev = _context8.next) {
         case 0:
-          return _context8.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC + "/api/access/getControlByContentPin"), {
+          return _context8.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC + "/api/access/getControlByContentPin"), {
             method: "GET",
             params: params
           }));
@@ -15697,7 +15678,7 @@ var getDecryptContent = /*#__PURE__*/function () {
         case 0:
           manDomain = manDomain === "show.now" ? "www.show.now" : manDomain;
           Host = manDomain ? "https://".concat(manDomain, "/man") : _config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC;
-          return _context9.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(Host + "/api/access/decrypt"), {
+          return _context9.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(Host + "/api/access/decrypt"), {
             method: "POST",
             data: params,
             headers: {
@@ -15716,7 +15697,7 @@ var getDecryptContent = /*#__PURE__*/function () {
 }();
 var getUserInfo = /*#__PURE__*/function () {
   var _ref19 = _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default()( /*#__PURE__*/_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().mark(function _callee10(params) {
-    var _ret$data;
+    var _normalizeUserInfo;
     var ret;
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee10$(_context10) {
       while (1) switch (_context10.prev = _context10.next) {
@@ -15728,16 +15709,13 @@ var getUserInfo = /*#__PURE__*/function () {
           return _context10.abrupt("return", undefined);
         case 2:
           _context10.next = 4;
-          return (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .METAFS_INDEXER_API */ .sw, "/users/address/").concat(params.address), {
+          return (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .METAFS_INDEXER_API */ .sw, "/users/address/").concat(params.address), {
             method: "GET"
           });
         case 4:
           ret = _context10.sent;
-          if (ret.data) {
-            ret.data.metaid = ret.data.metaId;
-          }
-          return _context10.abrupt("return", (_ret$data = ret.data) !== null && _ret$data !== void 0 ? _ret$data : undefined);
-        case 7:
+          return _context10.abrupt("return", (_normalizeUserInfo = (0,_utils_userProfile__WEBPACK_IMPORTED_MODULE_4__/* .normalizeUserInfo */ .pS)(ret.data)) !== null && _normalizeUserInfo !== void 0 ? _normalizeUserInfo : undefined);
+        case 6:
         case "end":
           return _context10.stop();
       }
@@ -15762,7 +15740,7 @@ var getUserInfo = /*#__PURE__*/function () {
 // };
 var getUserInfoByMetaid = /*#__PURE__*/function () {
   var _ref20 = _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default()( /*#__PURE__*/_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().mark(function _callee11(params) {
-    var _ref21, _ret$data2;
+    var _ref21, _ret$data;
     var ret;
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee11$(_context11) {
       while (1) switch (_context11.prev = _context11.next) {
@@ -15774,12 +15752,12 @@ var getUserInfoByMetaid = /*#__PURE__*/function () {
           return _context11.abrupt("return", undefined);
         case 2:
           _context11.next = 4;
-          return (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat((0,_config__WEBPACK_IMPORTED_MODULE_3__/* .getHostByNet */ .aI)(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM), "/api/info/metaid/").concat(params.metaid), {
+          return (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat((0,_config__WEBPACK_IMPORTED_MODULE_3__/* .getHostByNet */ .aI)(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM), "/api/info/metaid/").concat(params.metaid), {
             method: "GET"
           });
         case 4:
           ret = _context11.sent;
-          return _context11.abrupt("return", (_ref21 = (_ret$data2 = ret.data) !== null && _ret$data2 !== void 0 ? _ret$data2 : ret) !== null && _ref21 !== void 0 ? _ref21 : undefined);
+          return _context11.abrupt("return", (_ref21 = (_ret$data = ret.data) !== null && _ret$data !== void 0 ? _ret$data : ret) !== null && _ref21 !== void 0 ? _ref21 : undefined);
         case 6:
         case "end":
           return _context11.stop();
@@ -15795,7 +15773,7 @@ var getMRC20Info = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee12$(_context12) {
       while (1) switch (_context12.prev = _context12.next) {
         case 0:
-          return _context12.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM === "testnet" ? _config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC : _config__WEBPACK_IMPORTED_MODULE_3__/* .MAINNET_MAN_HOST_V1 */ .BX, "/api/mrc20/tick/info"), {
+          return _context12.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM === "testnet" ? _config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC : _config__WEBPACK_IMPORTED_MODULE_3__/* .MAINNET_MAN_HOST_V1 */ .BX, "/api/mrc20/tick/info"), {
             method: "GET",
             params: params
           }));
@@ -15829,7 +15807,7 @@ var getDeployList = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee13$(_context13) {
       while (1) switch (_context13.prev = _context13.next) {
         case 0:
-          return _context13.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM === "testnet" ? _config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC : _config__WEBPACK_IMPORTED_MODULE_3__/* .MAINNET_MAN_HOST_V1 */ .BX, "/ft/mrc20/address/deploy-list"), {
+          return _context13.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM === "testnet" ? _config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC : _config__WEBPACK_IMPORTED_MODULE_3__/* .MAINNET_MAN_HOST_V1 */ .BX, "/ft/mrc20/address/deploy-list"), {
             method: "GET",
             params: params
           }));
@@ -15848,7 +15826,7 @@ var getFollowList = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee14$(_context14) {
       while (1) switch (_context14.prev = _context14.next) {
         case 0:
-          return _context14.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .AVATAR_BASE_URL */ .bq, "/social/buzz/follow"), {
+          return _context14.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .AVATAR_BASE_URL */ .bq, "/social/buzz/follow"), {
             method: "GET",
             params: params
           }));
@@ -15867,7 +15845,7 @@ var getUserNFTCollections = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee15$(_context15) {
       while (1) switch (_context15.prev = _context15.next) {
         case 0:
-          return _context15.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/mrc721/address/collection"), {
+          return _context15.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/mrc721/address/collection"), {
             method: "GET",
             params: params
           }));
@@ -15886,7 +15864,7 @@ var getUserNFTCollectionItems = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee16$(_context16) {
       while (1) switch (_context16.prev = _context16.next) {
         case 0:
-          return _context16.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/mrc721/address/item"), {
+          return _context16.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/mrc721/address/item"), {
             method: "GET",
             params: params
           }));
@@ -15905,7 +15883,7 @@ var getNFTItem = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee17$(_context17) {
       while (1) switch (_context17.prev = _context17.next) {
         case 0:
-          return _context17.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/mrc721/item/info"), {
+          return _context17.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/mrc721/item/info"), {
             method: "GET",
             params: params
           }));
@@ -15924,7 +15902,7 @@ var getMetaBlockHostValue = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee18$(_context18) {
       while (1) switch (_context18.prev = _context18.next) {
         case 0:
-          return _context18.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(TMP_BASE_URL, "/statistics/metablock/host/value"), {
+          return _context18.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(TMP_BASE_URL, "/statistics/metablock/host/value"), {
             method: "GET",
             params: params
           }));
@@ -15943,7 +15921,7 @@ var getMetaBlockHostUserValue = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee19$(_context19) {
       while (1) switch (_context19.prev = _context19.next) {
         case 0:
-          return _context19.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(TMP_BASE_URL, "/statistics/metablock/host/address/value"), {
+          return _context19.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(TMP_BASE_URL, "/statistics/metablock/host/address/value"), {
             method: "GET",
             params: params
           }));
@@ -15962,7 +15940,7 @@ var getMetaBlockHostUserList = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee20$(_context20) {
       while (1) switch (_context20.prev = _context20.next) {
         case 0:
-          return _context20.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(TMP_BASE_URL, "/statistics/metablock/host/address/list"), {
+          return _context20.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(TMP_BASE_URL, "/statistics/metablock/host/address/list"), {
             method: "GET",
             params: params
           }));
@@ -15981,7 +15959,7 @@ var getMetaBlockNewest = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee21$(_context21) {
       while (1) switch (_context21.prev = _context21.next) {
         case 0:
-          return _context21.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(TMP_BASE_URL, "/statistics/host/metablock/sync-newest"), {
+          return _context21.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(TMP_BASE_URL, "/statistics/host/metablock/sync-newest"), {
             method: "GET"
           }));
         case 1:
@@ -15999,7 +15977,7 @@ var getHostNDV = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee22$(_context22) {
       while (1) switch (_context22.prev = _context22.next) {
         case 0:
-          return _context22.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(TMP_BASE_URL, "/statistics/ndv"), {
+          return _context22.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(TMP_BASE_URL, "/statistics/ndv"), {
             method: "GET",
             params: params
           }));
@@ -16018,7 +15996,7 @@ var getBlockedList = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee23$(_context23) {
       while (1) switch (_context23.prev = _context23.next) {
         case 0:
-          return _context23.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/metaso/settings/blocked/list"), {
+          return _context23.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/metaso/settings/blocked/list"), {
             method: "GET",
             params: params,
             headers: {
@@ -16041,7 +16019,7 @@ var getRecommendedList = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee24$(_context24) {
       while (1) switch (_context24.prev = _context24.next) {
         case 0:
-          return _context24.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/metaso/settings/recommended/list"), {
+          return _context24.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/metaso/settings/recommended/list"), {
             method: "GET",
             params: params,
             headers: {
@@ -16064,7 +16042,7 @@ var addBlockedItem = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee25$(_context25) {
       while (1) switch (_context25.prev = _context25.next) {
         case 0:
-          return _context25.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/metaso/settings/blocked/add"), {
+          return _context25.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/metaso/settings/blocked/add"), {
             method: "GET",
             params: params,
             headers: {
@@ -16087,7 +16065,7 @@ var addRecommendedItem = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee26$(_context26) {
       while (1) switch (_context26.prev = _context26.next) {
         case 0:
-          return _context26.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/metaso/settings/recommended/add"), {
+          return _context26.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/metaso/settings/recommended/add"), {
             method: "GET",
             params: params,
             headers: {
@@ -16110,7 +16088,7 @@ var deleteBlockedItem = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee27$(_context27) {
       while (1) switch (_context27.prev = _context27.next) {
         case 0:
-          return _context27.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/metaso/settings/blocked/delete"), {
+          return _context27.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/metaso/settings/blocked/delete"), {
             method: "GET",
             params: params,
             headers: {
@@ -16133,7 +16111,7 @@ var deleteRecommendedItem = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee28$(_context28) {
       while (1) switch (_context28.prev = _context28.next) {
         case 0:
-          return _context28.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/metaso/settings/recommended/delete"), {
+          return _context28.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/metaso/settings/recommended/delete"), {
             method: "GET",
             params: params,
             headers: {
@@ -16156,7 +16134,7 @@ var getVersionInfo = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee29$(_context29) {
       while (1) switch (_context29.prev = _context29.next) {
         case 0:
-          return _context29.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/updater"), {
+          return _context29.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/updater"), {
             method: "GET"
           }));
         case 1:
@@ -16189,7 +16167,7 @@ function _getUserMrc20List() {
             }
           }));
         case 2:
-          return _context50.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/mrc20/address/balance/").concat(params.address), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
+          return _context50.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/mrc20/address/balance/").concat(params.address), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
             method: "GET",
             params: {
               cursor: params.cursor,
@@ -16212,7 +16190,7 @@ function _getMrc20AddressUtxo() {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee51$(_context51) {
       while (1) switch (_context51.prev = _context51.next) {
         case 0:
-          return _context51.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .MARKET_ENDPOINT */ .U2, "/api/v1/common/mrc20/address/utxo"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
+          return _context51.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .MARKET_ENDPOINT */ .U2, "/api/v1/common/mrc20/address/utxo"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
             method: "GET",
             params: params
           }, options || {})));
@@ -16232,7 +16210,7 @@ function _transfertMrc20Pre() {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee52$(_context52) {
       while (1) switch (_context52.prev = _context52.next) {
         case 0:
-          return _context52.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .METASO_BASE_API */ .h_, "/v1/inscribe/mrc20/transfer/pre"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
+          return _context52.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .METASO_BASE_API */ .h_, "/v1/inscribe/mrc20/transfer/pre"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
             method: "POST",
             data: params
           }, options || {})));
@@ -16252,7 +16230,7 @@ function _transferMrc20Commit() {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee53$(_context53) {
       while (1) switch (_context53.prev = _context53.next) {
         case 0:
-          return _context53.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .METASO_BASE_API */ .h_, "/v1/inscribe/mrc20/transfer/commit"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
+          return _context53.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .METASO_BASE_API */ .h_, "/v1/inscribe/mrc20/transfer/commit"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
             method: "POST",
             data: params
           }, options || {})));
@@ -16272,7 +16250,7 @@ function _getMetasoConf() {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee54$(_context54) {
       while (1) switch (_context54.prev = _context54.next) {
         case 0:
-          return _context54.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/config/get"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
+          return _context54.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/config/get"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
             method: "GET",
             headers: {
               "X-Signature": localStorage.getItem(_config__WEBPACK_IMPORTED_MODULE_3__/* .DASHBOARD_SIGNATURE */ .xH) || "",
@@ -16295,7 +16273,7 @@ function _setMetasoConfChain() {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee55$(_context55) {
       while (1) switch (_context55.prev = _context55.next) {
         case 0:
-          return _context55.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/config/chain"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
+          return _context55.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/config/chain"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
             method: "GET",
             params: params,
             headers: {
@@ -16319,7 +16297,7 @@ function _setMetasoConfSyncHost() {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee56$(_context56) {
       while (1) switch (_context56.prev = _context56.next) {
         case 0:
-          return _context56.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/config/syncHost"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
+          return _context56.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/config/syncHost"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
             method: "GET",
             params: params,
             headers: {
@@ -16343,7 +16321,7 @@ function _setMetasoConfBlockedHost() {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee57$(_context57) {
       while (1) switch (_context57.prev = _context57.next) {
         case 0:
-          return _context57.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/config/blockedHost"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
+          return _context57.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/config/blockedHost"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
             method: "GET",
             params: params,
             headers: {
@@ -16367,7 +16345,7 @@ function _setMetasoConfInitialHeight() {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee58$(_context58) {
       while (1) switch (_context58.prev = _context58.next) {
         case 0:
-          return _context58.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/config/initialHeight"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
+          return _context58.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/config/initialHeight"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
             method: "GET",
             params: params,
             headers: {
@@ -16391,7 +16369,7 @@ function _setMetasoConfPubkey() {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee59$(_context59) {
       while (1) switch (_context59.prev = _context59.next) {
         case 0:
-          return _context59.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/config/pubkey"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
+          return _context59.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/config/pubkey"), _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
             method: "GET",
             params: params,
             headers: {
@@ -16414,7 +16392,7 @@ var getUserNotify = /*#__PURE__*/function () {
       while (1) switch (_context30.prev = _context30.next) {
         case 0:
           _context30.next = 2;
-          return (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat((0,_config__WEBPACK_IMPORTED_MODULE_3__/* .getHostByNet */ .aI)(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM), "/api/notifcation/list"), {
+          return (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat((0,_config__WEBPACK_IMPORTED_MODULE_3__/* .getHostByNet */ .aI)(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM), "/api/notifcation/list"), {
             method: "GET",
             params: params
           });
@@ -16438,7 +16416,7 @@ var getReplyContent = /*#__PURE__*/function () {
       while (1) switch (_context31.prev = _context31.next) {
         case 0:
           _context31.next = 2;
-          return (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat((0,_config__WEBPACK_IMPORTED_MODULE_3__/* .getHostByNet */ .aI)(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM), "/content/").concat(params.pinId), {
+          return (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat((0,_config__WEBPACK_IMPORTED_MODULE_3__/* .getHostByNet */ .aI)(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM), "/content/").concat(params.pinId), {
             method: "GET"
           });
         case 2:
@@ -16461,7 +16439,7 @@ var getRewardContent = /*#__PURE__*/function () {
       while (1) switch (_context32.prev = _context32.next) {
         case 0:
           _context32.next = 2;
-          return (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat((0,_config__WEBPACK_IMPORTED_MODULE_3__/* .getHostByNet */ .aI)(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM), "/content/").concat(params.pinId), {
+          return (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat((0,_config__WEBPACK_IMPORTED_MODULE_3__/* .getHostByNet */ .aI)(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM), "/content/").concat(params.pinId), {
             method: "GET"
           });
         case 2:
@@ -16530,7 +16508,7 @@ var fetchBuzzContent = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee33$(_context33) {
       while (1) switch (_context33.prev = _context33.next) {
         case 0:
-          return _context33.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat((0,_config__WEBPACK_IMPORTED_MODULE_3__/* .getHostByNet */ .aI)(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM), "/content/").concat(params.pinId), {
+          return _context33.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat((0,_config__WEBPACK_IMPORTED_MODULE_3__/* .getHostByNet */ .aI)(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM), "/content/").concat(params.pinId), {
             method: "GET"
           }));
         case 1:
@@ -16548,7 +16526,7 @@ var getRecommendedFollow = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee34$(_context34) {
       while (1) switch (_context34.prev = _context34.next) {
         case 0:
-          return _context34.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/metaid/recommended"), {
+          return _context34.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/api/metaid/recommended"), {
             method: "GET",
             params: params
           }));
@@ -16567,7 +16545,7 @@ var fetchComments = /*#__PURE__*/function () {
     return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee35$(_context35) {
       while (1) switch (_context35.prev = _context35.next) {
         case 0:
-          return _context35.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_4__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/comments"), {
+          return _context35.abrupt("return", (0,umi__WEBPACK_IMPORTED_MODULE_5__.request)("".concat(_config__WEBPACK_IMPORTED_MODULE_3__/* .BASE_MAN_URL */ .yC, "/social/buzz/comments"), {
             method: "GET",
             params: params
           }));
@@ -18381,6 +18359,264 @@ var NotificationStore = /*#__PURE__*/function () {
   }]);
   return NotificationStore;
 }();
+
+/***/ }),
+
+/***/ 70486:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Kz: function() { return /* binding */ getMetafilePinId; },
+/* harmony export */   LE: function() { return /* binding */ normalizeVideoMetafileUri; },
+/* harmony export */   de: function() { return /* binding */ stripMetafilePrefix; }
+/* harmony export */ });
+/* unused harmony exports isTypedMetafilePath, getTypedMetafilePinId, isVideoMetafileUri */
+var METAFILE_PREFIX = "metafile://";
+var TYPED_METAFILE_PREFIXES = ["video/", "audio/", "image/"];
+var VIDEO_EXTENSIONS = new Set(["mp4", "webm", "av1", "avi", "mov", "wmv", "flv", "mkv", "3gp"]);
+function splitExtension(path) {
+  var cleanPath = path.split(/[?#]/)[0];
+  var lastSegment = cleanPath.split("/").pop() || cleanPath;
+  var dotIndex = lastSegment.lastIndexOf(".");
+  if (dotIndex <= 0) {
+    return {
+      name: lastSegment,
+      extension: ""
+    };
+  }
+  return {
+    name: lastSegment.slice(0, dotIndex),
+    extension: lastSegment.slice(dotIndex + 1).toLowerCase()
+  };
+}
+function stripMetafilePrefix(uri) {
+  return uri.startsWith(METAFILE_PREFIX) ? uri.slice(METAFILE_PREFIX.length) : uri;
+}
+function isTypedMetafilePath(pathOrUri) {
+  var path = stripMetafilePrefix(pathOrUri);
+  return TYPED_METAFILE_PREFIXES.some(function (prefix) {
+    return path.startsWith(prefix);
+  });
+}
+function getTypedMetafilePinId(pathOrUri) {
+  var path = stripMetafilePrefix(pathOrUri);
+  var matchedPrefix = TYPED_METAFILE_PREFIXES.find(function (prefix) {
+    return path.startsWith(prefix);
+  });
+  if (!matchedPrefix) {
+    return undefined;
+  }
+  return path.slice(matchedPrefix.length);
+}
+function getMetafilePinId(pathOrUri) {
+  var typedPinId = getTypedMetafilePinId(pathOrUri);
+  if (typedPinId) {
+    return typedPinId;
+  }
+  var normalizedPath = stripMetafilePrefix(pathOrUri);
+  return splitExtension(normalizedPath).name;
+}
+function isVideoMetafileUri(pathOrUri) {
+  var path = stripMetafilePrefix(pathOrUri);
+  if (path.startsWith("video/")) {
+    return true;
+  }
+  return VIDEO_EXTENSIONS.has(splitExtension(path).extension);
+}
+function normalizeVideoMetafileUri(pathOrUri) {
+  if (!isVideoMetafileUri(pathOrUri)) {
+    return pathOrUri;
+  }
+  return "".concat(METAFILE_PREFIX, "video/").concat(getMetafilePinId(pathOrUri));
+}
+
+/***/ }),
+
+/***/ 4842:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   EL: function() { return /* binding */ getMetafileImagePreviewUrl; },
+/* harmony export */   MR: function() { return /* binding */ getMetafileOriginalUrl; },
+/* harmony export */   nJ: function() { return /* binding */ getMetafilePinIdFromSource; }
+/* harmony export */ });
+/* unused harmony exports METAFILE_FILES_API, buildMetafileOriginalUrl, buildMetafileImagePreviewUrl */
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(335);
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _metafile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(70486);
+
+
+var METAFILE_FILES_API = "https://file.metaid.io/metafile-indexer/api/v1/files";
+var ACCELERATE_CONTENT_PATH = "accelerate/content";
+var DATA_OR_BLOB_URL_PATTERN = /^(data:|blob:)/i;
+var ABSOLUTE_HTTP_URL_PATTERN = /^https?:\/\//i;
+var TYPED_MEDIA_PREFIXES = ["video/", "audio/", "image/"];
+var CONTENT_PATH_MARKERS = ["/accelerate/content/", "/man/content/", "/content/"];
+function normalizePathSource(source) {
+  return source.trim().replace(/^\/+/, "");
+}
+function stripQueryAndHash(source) {
+  return source.split(/[?#]/)[0];
+}
+function extractPinIdFromContentPath(pathname) {
+  var _iterator = _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_0___default()(CONTENT_PATH_MARKERS),
+    _step;
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var marker = _step.value;
+      var markerIndex = pathname.indexOf(marker);
+      if (markerIndex === -1) {
+        continue;
+      }
+      var rest = pathname.slice(markerIndex + marker.length);
+      var candidate = stripQueryAndHash(rest).split("/")[0];
+      return candidate ? (0,_metafile__WEBPACK_IMPORTED_MODULE_1__/* .getMetafilePinId */ .Kz)(candidate) : undefined;
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+  return undefined;
+}
+function getMetafilePinIdFromSource(source) {
+  if (!source) {
+    return undefined;
+  }
+  var trimmed = source.trim();
+  if (!trimmed || DATA_OR_BLOB_URL_PATTERN.test(trimmed)) {
+    return undefined;
+  }
+  if (trimmed.startsWith("metafile://")) {
+    return (0,_metafile__WEBPACK_IMPORTED_MODULE_1__/* .getMetafilePinId */ .Kz)(trimmed);
+  }
+  if (ABSOLUTE_HTTP_URL_PATTERN.test(trimmed)) {
+    try {
+      var url = new URL(trimmed);
+      return extractPinIdFromContentPath(url.pathname);
+    } catch (error) {
+      return undefined;
+    }
+  }
+  var normalizedPath = normalizePathSource(trimmed);
+  var contentPathPinId = extractPinIdFromContentPath("/".concat(normalizedPath));
+  if (contentPathPinId) {
+    return contentPathPinId;
+  }
+  if (TYPED_MEDIA_PREFIXES.some(function (prefix) {
+    return (0,_metafile__WEBPACK_IMPORTED_MODULE_1__/* .stripMetafilePrefix */ .de)(normalizedPath).startsWith(prefix);
+  })) {
+    return (0,_metafile__WEBPACK_IMPORTED_MODULE_1__/* .getMetafilePinId */ .Kz)(normalizedPath);
+  }
+  return (0,_metafile__WEBPACK_IMPORTED_MODULE_1__/* .getMetafilePinId */ .Kz)(stripQueryAndHash(normalizedPath));
+}
+function buildMetafileOriginalUrl(pinId) {
+  return "".concat(METAFILE_FILES_API, "/").concat(ACCELERATE_CONTENT_PATH, "/").concat(pinId);
+}
+function buildMetafileImagePreviewUrl(pinId) {
+  return "".concat(buildMetafileOriginalUrl(pinId), "?process=preview");
+}
+function getMetafileOriginalUrl(source) {
+  var pinId = getMetafilePinIdFromSource(source);
+  return pinId ? buildMetafileOriginalUrl(pinId) : source;
+}
+function getMetafileImagePreviewUrl(source) {
+  var pinId = getMetafilePinIdFromSource(source);
+  return pinId ? buildMetafileImagePreviewUrl(pinId) : source;
+}
+
+/***/ }),
+
+/***/ 35021:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   RB: function() { return /* binding */ buildUserState; },
+/* harmony export */   pS: function() { return /* binding */ normalizeUserInfo; }
+/* harmony export */ });
+/* unused harmony exports normalizeProfileMediaUrl, normalizeProfileText */
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(26068);
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(335);
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_typeof_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(31759);
+/* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_typeof_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_typeof_js__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var PROFILE_TEXT_PRIORITY_KEYS = ["role", "bio", "description", "summary", "about", "goal", "background", "soul"];
+function normalizeProfileMediaUrl(value, baseUrl) {
+  if (!value) {
+    return "";
+  }
+  if (/^https?:\/\//i.test(value)) {
+    return value;
+  }
+  return "".concat(baseUrl).concat(value);
+}
+function normalizeProfileText(value) {
+  if (value === null || value === undefined) {
+    return "";
+  }
+  if (typeof value === "string") {
+    return value.trim();
+  }
+  if (typeof value === "number" || typeof value === "boolean") {
+    return String(value);
+  }
+  if (Array.isArray(value)) {
+    return value.map(normalizeProfileText).filter(Boolean).join(", ");
+  }
+  if (_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_typeof_js__WEBPACK_IMPORTED_MODULE_2___default()(value) === "object") {
+    var record = value;
+    var _iterator = _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_1___default()(PROFILE_TEXT_PRIORITY_KEYS),
+      _step;
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var key = _step.value;
+        var text = normalizeProfileText(record[key]);
+        if (text) {
+          return text;
+        }
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+    return Object.values(record).map(normalizeProfileText).filter(Boolean).join(" / ");
+  }
+  return "";
+}
+function normalizeUserInfo(userInfo) {
+  if (!userInfo) {
+    return undefined;
+  }
+  return _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()(_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({}, userInfo), {}, {
+    globalMetaId: userInfo.globalMetaId || "",
+    metaid: userInfo.metaid || userInfo.metaId || "",
+    bio: normalizeProfileText(userInfo.bio)
+  });
+}
+function buildUserState(_ref) {
+  var address = _ref.address,
+    userInfo = _ref.userInfo,
+    profile = _ref.profile,
+    baseUrl = _ref.baseUrl;
+  var normalizedUserInfo = normalizeUserInfo(userInfo);
+  return {
+    avatar: normalizeProfileMediaUrl(normalizedUserInfo === null || normalizedUserInfo === void 0 ? void 0 : normalizedUserInfo.avatar, baseUrl),
+    background: normalizeProfileMediaUrl(normalizedUserInfo === null || normalizedUserInfo === void 0 ? void 0 : normalizedUserInfo.background, baseUrl),
+    name: (normalizedUserInfo === null || normalizedUserInfo === void 0 ? void 0 : normalizedUserInfo.name) || normalizeProfileText(profile.name) || "",
+    globalMetaId: (normalizedUserInfo === null || normalizedUserInfo === void 0 ? void 0 : normalizedUserInfo.globalMetaId) || normalizeProfileText(profile.globalMetaId) || "",
+    metaid: (normalizedUserInfo === null || normalizedUserInfo === void 0 ? void 0 : normalizedUserInfo.metaid) || "",
+    bio: (normalizedUserInfo === null || normalizedUserInfo === void 0 ? void 0 : normalizedUserInfo.bio) || normalizeProfileText(profile.bio) || "",
+    address: address
+  };
+}
 
 /***/ }),
 
@@ -256322,8 +256558,8 @@ function _getRoutes() {
   }));
   return _getRoutes.apply(this, arguments);
 }
-// EXTERNAL MODULE: ./src/.umi-production/core/plugin.ts + 10 modules
-var core_plugin = __webpack_require__(51953);
+// EXTERNAL MODULE: ./src/.umi-production/core/plugin.ts + 9 modules
+var core_plugin = __webpack_require__(49174);
 // EXTERNAL MODULE: ./src/.umi-production/core/history.ts
 var core_history = __webpack_require__(13866);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/spin/index.js + 5 modules

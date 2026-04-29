@@ -50,53 +50,16 @@ var objectSpread2 = __webpack_require__(26068);
 var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
 // EXTERNAL MODULE: ./src/config/index.ts
 var config = __webpack_require__(78488);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(52676);
-;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/ImageRenderer.tsx
-
-
-
-
-
-var ImageRenderer = function ImageRenderer(_ref) {
-  var url = _ref.url,
-    alt = _ref.alt,
-    className = _ref.className,
-    style = _ref.style,
-    onClick = _ref.onClick;
-  console.log('Rendering image with URL:', url);
-  return /*#__PURE__*/(0,jsx_runtime.jsx)(es_image/* default */.Z, {
-    src: url,
-    alt: alt,
-    className: className,
-    style: objectSpread2_default()({
-      objectFit: 'cover',
-      borderRadius: '8px',
-      maxWidth: '100%',
-      maxHeight: '400px'
-    }, style),
-    fallback: config/* FallbackImage */.vL,
-    onClick: onClick,
-    preview: {
-      mask: false
-    }
-  });
-};
-/* harmony default export */ var MediaRenderer_ImageRenderer = (ImageRenderer);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/regeneratorRuntime.js
 var regeneratorRuntime = __webpack_require__(90228);
 var regeneratorRuntime_default = /*#__PURE__*/__webpack_require__.n(regeneratorRuntime);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/asyncToGenerator.js
 var asyncToGenerator = __webpack_require__(87999);
 var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/spin/index.js + 5 modules
-var spin = __webpack_require__(55576);
-// EXTERNAL MODULE: ./node_modules/.pnpm/plyr-react@5.3.0_plyr@3.7.8_react@18.3.1/node_modules/plyr-react/esm/index.js + 1 modules
-var esm = __webpack_require__(33444);
-// EXTERNAL MODULE: ./node_modules/.pnpm/plyr-react@5.3.0_plyr@3.7.8_react@18.3.1/node_modules/plyr-react/plyr.css
-var plyr = __webpack_require__(65537);
 // EXTERNAL MODULE: ./src/utils/metafile.ts
 var metafile = __webpack_require__(70486);
+// EXTERNAL MODULE: ./src/utils/metafileUrl.ts
+var metafileUrl = __webpack_require__(4842);
 // EXTERNAL MODULE: ./src/utils/utils.ts
 var utils = __webpack_require__(72898);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/utils.ts
@@ -136,19 +99,24 @@ var ARCHIVE_EXTENSIONS = ["zip", "rar", "7z", "tar", "gz", "bz2"];
 function getFileExtension(url) {
   // 处理 metafile:// 格式
   if (url.startsWith("metafile://")) {
-    var path = (0,metafile/* stripMetafilePrefix */.de)(url);
-    var _parts = path.split(".");
-    return _parts.length > 1 ? _parts[_parts.length - 1].toLowerCase() : "";
+    var _path = (0,metafile/* stripMetafilePrefix */.de)(url);
+    var parts = _path.split(".");
+    return parts.length > 1 ? parts[parts.length - 1].toLowerCase() : "";
   }
 
   // 处理普通 URL
-  var parts = url.split(".");
-  if (parts.length > 1) {
-    var ext = parts[parts.length - 1].toLowerCase();
-    // 移除可能的查询参数
-    return ext.split("?")[0].split("#")[0];
+  var path = url;
+  try {
+    if (/^https?:\/\//i.test(url)) {
+      path = new URL(url).pathname;
+    }
+  } catch (error) {
+    path = url;
   }
-  return "";
+  var cleanPath = path.split(/[?#]/)[0];
+  var lastSegment = cleanPath.split("/").pop() || cleanPath;
+  var dotIndex = lastSegment.lastIndexOf(".");
+  return dotIndex > 0 ? lastSegment.slice(dotIndex + 1).toLowerCase() : "";
 }
 
 /**
@@ -195,42 +163,17 @@ function getFileType(url) {
  * 新格式：metafile://{pinId}.{文件类型}
  */
 function getFileUrl(url) {
-  // 如果是 metafile:// 格式，转换为 MAN URL
-  if (url.startsWith("metafile://")) {
-    var fullPath = (0,metafile/* stripMetafilePrefix */.de)(url);
-
-    // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
-    if (fullPath.startsWith("video/") || fullPath.startsWith("audio/") || fullPath.startsWith("image/")) {
-      var pinId = fullPath.split("/")[1]; // 获取 / 后面的 pinId
-      return "".concat(config/* METAFS_API */.nM, "/content/").concat(pinId);
-    }
-
-    // 处理普通格式：metafile://pinId.ext
-    return "".concat(config/* METAFS_API */.nM, "/content/").concat(fullPath);
-  }
-  if (url.startsWith("video/") || url.startsWith("audio/") || url.startsWith("image/")) {
-    return "".concat(config/* METAFS_API */.nM, "/content/").concat((0,metafile/* getMetafilePinId */.Kz)(url));
-  }
-
-  // 如果是旧的 /video/ 格式，保持兼容
-  if (url.startsWith("/video/")) {
-    var _pinId = url.replace("/video/", "");
-    return "".concat(config/* METAFS_API */.nM, "/content/").concat(_pinId);
-  }
-
-  // 如果已经是完整 URL，直接返回
-  if (url.startsWith("http")) {
-    return url;
-  }
-
-  // 其他情况，当作 pinId 处理
-  return "".concat(config/* METAFS_API */.nM, "/content/").concat(url);
+  return (0,metafileUrl/* getMetafileOriginalUrl */.MR)(url);
 }
 
 /**
  * 从 URL 中提取 pinId
  */
 function getPinId(url) {
+  var metafilePinId = (0,metafileUrl/* getMetafilePinIdFromSource */.nJ)(url);
+  if (metafilePinId) {
+    return metafilePinId;
+  }
   if (url.startsWith("metafile://")) {
     var fullPath = (0,metafile/* stripMetafilePrefix */.de)(url);
     // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
@@ -241,8 +184,8 @@ function getPinId(url) {
     // 处理普通格式：metafile://pinId.ext
     // 移除文件扩展名
 
-    var _parts2 = fullPath.split(".");
-    return _parts2.length > 1 ? _parts2.slice(0, -1).join(".") : fullPath;
+    var _parts = fullPath.split(".");
+    return _parts.length > 1 ? _parts.slice(0, -1).join(".") : fullPath;
   }
   if (url.startsWith("video/") || url.startsWith("audio/") || url.startsWith("image/")) {
     return (0,metafile/* getMetafilePinId */.Kz)(url);
@@ -253,8 +196,8 @@ function getPinId(url) {
 
   // 从完整 URL 中提取
   if (url.includes("/content/")) {
-    var _parts3 = url.split("/content/");
-    return _parts3[_parts3.length - 1];
+    var _parts2 = url.split("/content/");
+    return _parts2[_parts2.length - 1];
   }
   var parts = url.split(".");
   return parts.length > 1 ? parts.slice(0, -1).join(".") : url;
@@ -267,9 +210,9 @@ function getFileName(url) {
   // 处理 metafile:// 格式
   if (url.startsWith("metafile://")) {
     var path = (0,metafile/* stripMetafilePrefix */.de)(url);
-    var _parts4 = path.split(".");
+    var _parts3 = path.split(".");
     // 返回不含扩展名的部分
-    return _parts4.length > 1 ? _parts4.slice(0, -1).join(".") : path;
+    return _parts3.length > 1 ? _parts3.slice(0, -1).join(".") : path;
   }
   if (url.startsWith("video/") || url.startsWith("audio/") || url.startsWith("image/")) {
     return (0,metafile/* getMetafilePinId */.Kz)(url);
@@ -463,102 +406,17 @@ function getMimeType(extension) {
 }
 
 /**
- * 获取预览URL（保留扩展名）
- * 预览时保留扩展名，让服务器能正确识别文件类型并设置Content-Type
+ * 获取图片缩略预览 URL。
  */
 function getPreviewUrl(url) {
-  return getFileUrl(url); // 预览时使用原始带扩展名的URL
+  return (0,metafileUrl/* getMetafileImagePreviewUrl */.EL)(url);
 }
 
 /**
- * 获取下载URL（不含扩展名）
- * 下载时使用的URL应该去除文件扩展名
+ * 获取原文件 URL，用于图片大图、视频、音频、文档和下载。
  */
 function getDownloadUrl(url) {
-  // 如果是 metafile:// 格式，转换为不含扩展名的 MAN URL
-  if (url.startsWith("metafile://")) {
-    var fullPath = (0,metafile/* stripMetafilePrefix */.de)(url);
-
-    // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
-    if (fullPath.startsWith("video/") || fullPath.startsWith("audio/") || fullPath.startsWith("image/")) {
-      var _pinId2 = fullPath.split("/")[1]; // 获取 / 后面的 pinId
-      return "".concat(config/* METAFS_API */.nM, "/content/").concat(_pinId2);
-    }
-
-    // 处理普通格式：metafile://pinId.ext
-    // 移除文件扩展名，获取纯 pinId
-    var parts = fullPath.split(".");
-    var pinId = parts.length > 1 ? parts.slice(0, -1).join(".") : fullPath;
-    return "".concat(config/* METAFS_API */.nM, "/content/").concat(pinId);
-  }
-  if (url.startsWith("video/") || url.startsWith("audio/") || url.startsWith("image/")) {
-    return "".concat(config/* METAFS_API */.nM, "/content/").concat((0,metafile/* getMetafilePinId */.Kz)(url));
-  }
-
-  // 如果是旧的 /video/ 格式，保持兼容
-  if (url.startsWith("/video/")) {
-    var _pinId3 = url.replace("/video/", "");
-    return "https://file.metaid.io/metafile-indexer/api/v1/files/content/".concat(_pinId3);
-  }
-
-  // 如果已经是完整 URL，需要移除扩展名
-  if (url.startsWith("http")) {
-    // 先检查URL的路径部分是否包含扩展名
-    try {
-      var urlObj = new URL(url);
-      var pathname = urlObj.pathname;
-      var pathParts = pathname.split("/");
-      var lastPart = pathParts[pathParts.length - 1];
-
-      // 检查最后一部分是否包含扩展名
-      var dotIndex = lastPart.lastIndexOf(".");
-      if (dotIndex > 0) {
-        var extension = lastPart.substring(dotIndex + 1);
-        // 检查是否是有效的文件扩展名（长度小于5且只包含字母数字）
-        if (extension.length <= 4 && /^[a-zA-Z0-9]+$/.test(extension)) {
-          // 移除扩展名
-          var nameWithoutExt = lastPart.substring(0, dotIndex);
-          pathParts[pathParts.length - 1] = nameWithoutExt;
-          urlObj.pathname = pathParts.join("/");
-          var newUrl = urlObj.toString();
-          return newUrl;
-        }
-      }
-    } catch (e) {
-      // 如果URL解析失败，使用字符串方法
-      console.warn("Failed to parse URL, using string method:", e);
-    }
-
-    // 备用方法：使用字符串处理
-    var urlParts = url.split(".");
-    if (urlParts.length > 1) {
-      var _lastPart = urlParts[urlParts.length - 1];
-      // 检查最后一部分是否是文件扩展名（长度小于5且不包含特殊字符）
-      if (_lastPart.length <= 4 && /^[a-zA-Z0-9]+(\?.*|#.*)?$/.test(_lastPart)) {
-        // 移除扩展名，但保留可能的查询参数
-        var extensionWithParams = _lastPart.split(/[?#]/);
-        if (extensionWithParams[0].length <= 4) {
-          return urlParts.slice(0, -1).join(".") + (extensionWithParams.length > 1 ? "?" + _lastPart.split("?").slice(1).join("?") : "");
-        }
-      }
-    }
-    return url;
-  }
-
-  // 其他情况，当作 pinId 处理，需要移除可能的扩展名
-  if (url.includes(".")) {
-    var _parts5 = url.split(".");
-    if (_parts5.length > 1) {
-      var _extension = _parts5[_parts5.length - 1];
-      // 检查是否是有效的文件扩展名（长度小于5且只包含字母数字）
-      if (_extension.length <= 4 && /^[a-zA-Z0-9]+$/.test(_extension)) {
-        // 移除扩展名
-        var fileNameWithoutExt = _parts5.slice(0, -1).join(".");
-        return "".concat(config/* METAFS_API */.nM, "/content/").concat(fileNameWithoutExt);
-      }
-    }
-  }
-  return "".concat(config/* METAFS_API */.nM, "/content/").concat(url);
+  return (0,metafileUrl/* getMetafileOriginalUrl */.MR)(url);
 }
 
 /**
@@ -613,6 +471,48 @@ function _fetchFileInfo() {
   }));
   return _fetchFileInfo.apply(this, arguments);
 }
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(52676);
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/ImageRenderer.tsx
+
+
+
+
+
+
+var ImageRenderer = function ImageRenderer(_ref) {
+  var url = _ref.url,
+    originalUrl = _ref.originalUrl,
+    alt = _ref.alt,
+    className = _ref.className,
+    style = _ref.style,
+    onClick = _ref.onClick;
+  console.log('Rendering image with URL:', url);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(es_image/* default */.Z, {
+    src: url,
+    alt: alt,
+    className: className,
+    style: objectSpread2_default()({
+      objectFit: 'cover',
+      borderRadius: '8px',
+      maxWidth: '100%',
+      maxHeight: '400px'
+    }, style),
+    fallback: config/* FallbackImage */.vL,
+    onClick: onClick,
+    preview: {
+      mask: false,
+      src: getDownloadUrl(originalUrl || url)
+    }
+  });
+};
+/* harmony default export */ var MediaRenderer_ImageRenderer = (ImageRenderer);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/spin/index.js + 5 modules
+var spin = __webpack_require__(55576);
+// EXTERNAL MODULE: ./node_modules/.pnpm/plyr-react@5.3.0_plyr@3.7.8_react@18.3.1/node_modules/plyr-react/esm/index.js + 1 modules
+var esm = __webpack_require__(33444);
+// EXTERNAL MODULE: ./node_modules/.pnpm/plyr-react@5.3.0_plyr@3.7.8_react@18.3.1/node_modules/plyr-react/plyr.css
+var plyr = __webpack_require__(65537);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/video.less
 // extracted by mini-css-extract-plugin
 
@@ -1373,9 +1273,8 @@ var MediaRenderer = function MediaRenderer(_ref) {
     className = _ref.className,
     style = _ref.style,
     onClick = _ref.onClick;
-  // 处理 URL，支持旧格式和新格式
-  var processedUrl = getFileUrl(url);
   var fileType = getFileType(url);
+  var processedUrl = fileType === FileType.IMAGE ? getPreviewUrl(url) : getFileUrl(url);
   var commonProps = {
     url: processedUrl,
     originalUrl: url,
@@ -1500,10 +1399,8 @@ var MediaRenderer = function MediaRenderer(_ref) {
         className: "image-item"
       }, "encrypt-".concat(index));
     }
-
-    // 处理普通图片文件
-    // 使用getDownloadUrl去除扩展名，保持与MediaRenderer一致的URL处理
-    var imageUrl = getDownloadUrl(file);
+    var imageUrl = getPreviewUrl(file);
+    var originalUrl = getDownloadUrl(file);
     return /*#__PURE__*/(0,jsx_runtime.jsx)(es_image/* default */.Z, {
       style: {
         objectFit: 'cover',
@@ -1514,7 +1411,10 @@ var MediaRenderer = function MediaRenderer(_ref) {
       },
       src: imageUrl,
       fallback: config/* FallbackImage */.vL,
-      className: "image-item"
+      className: "image-item",
+      preview: {
+        src: originalUrl
+      }
     }, "public-".concat(index));
   };
   var renderOtherFile = function renderOtherFile(file, index) {
@@ -3595,10 +3495,10 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
 "use strict";
 /* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48305);
 /* harmony import */ var _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(78488);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(83734);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(75271);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93603);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75271);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(93603);
+/* harmony import */ var _utils_metafileUrl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4842);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(52676);
 
 
@@ -3612,21 +3512,21 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
     tick = _ref.tick,
     _ref$metadata = _ref.metadata,
     metadata = _ref$metadata === void 0 ? '' : _ref$metadata;
-  var _useModel = (0,umi__WEBPACK_IMPORTED_MODULE_3__.useModel)('dashboard'),
+  var _useModel = (0,umi__WEBPACK_IMPORTED_MODULE_2__.useModel)('dashboard'),
     showConf = _useModel.showConf;
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
     _useState2 = _Users_tusm_Documents_MetaID_Projects_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
     err = _useState2[0],
     setErr = _useState2[1];
-  var src = (0,react__WEBPACK_IMPORTED_MODULE_2__.useMemo)(function () {
+  var src = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(function () {
     if (metadata && !err) {
       try {
         var data = JSON.parse(metadata);
         if (data.icon) {
-          return data.icon.replace('metafile://', "https://man".concat(_config__WEBPACK_IMPORTED_MODULE_1__/* .curNetwork */ .eM === 'testnet' ? '-test' : '', ".metaid.io/content/"));
+          return (0,_utils_metafileUrl__WEBPACK_IMPORTED_MODULE_3__/* .getMetafileImagePreviewUrl */ .EL)(data.icon);
         }
         if (data.cover) {
-          return data.cover.replace('metafile://', "https://man".concat(_config__WEBPACK_IMPORTED_MODULE_1__/* .curNetwork */ .eM === 'testnet' ? '-test' : '', ".metaid.io/content/"));
+          return (0,_utils_metafileUrl__WEBPACK_IMPORTED_MODULE_3__/* .getMetafileImagePreviewUrl */ .EL)(data.cover);
         }
       } catch (err) {
         return '';
@@ -5588,77 +5488,6 @@ function _processFile() {
     }, _callee5);
   }));
   return _processFile.apply(this, arguments);
-}
-
-/***/ }),
-
-/***/ 70486:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Kz: function() { return /* binding */ getMetafilePinId; },
-/* harmony export */   LE: function() { return /* binding */ normalizeVideoMetafileUri; },
-/* harmony export */   de: function() { return /* binding */ stripMetafilePrefix; }
-/* harmony export */ });
-/* unused harmony exports isTypedMetafilePath, getTypedMetafilePinId, isVideoMetafileUri */
-var METAFILE_PREFIX = "metafile://";
-var TYPED_METAFILE_PREFIXES = ["video/", "audio/", "image/"];
-var VIDEO_EXTENSIONS = new Set(["mp4", "webm", "av1", "avi", "mov", "wmv", "flv", "mkv", "3gp"]);
-function splitExtension(path) {
-  var cleanPath = path.split(/[?#]/)[0];
-  var lastSegment = cleanPath.split("/").pop() || cleanPath;
-  var dotIndex = lastSegment.lastIndexOf(".");
-  if (dotIndex <= 0) {
-    return {
-      name: lastSegment,
-      extension: ""
-    };
-  }
-  return {
-    name: lastSegment.slice(0, dotIndex),
-    extension: lastSegment.slice(dotIndex + 1).toLowerCase()
-  };
-}
-function stripMetafilePrefix(uri) {
-  return uri.startsWith(METAFILE_PREFIX) ? uri.slice(METAFILE_PREFIX.length) : uri;
-}
-function isTypedMetafilePath(pathOrUri) {
-  var path = stripMetafilePrefix(pathOrUri);
-  return TYPED_METAFILE_PREFIXES.some(function (prefix) {
-    return path.startsWith(prefix);
-  });
-}
-function getTypedMetafilePinId(pathOrUri) {
-  var path = stripMetafilePrefix(pathOrUri);
-  var matchedPrefix = TYPED_METAFILE_PREFIXES.find(function (prefix) {
-    return path.startsWith(prefix);
-  });
-  if (!matchedPrefix) {
-    return undefined;
-  }
-  return path.slice(matchedPrefix.length);
-}
-function getMetafilePinId(pathOrUri) {
-  var typedPinId = getTypedMetafilePinId(pathOrUri);
-  if (typedPinId) {
-    return typedPinId;
-  }
-  var normalizedPath = stripMetafilePrefix(pathOrUri);
-  return splitExtension(normalizedPath).name;
-}
-function isVideoMetafileUri(pathOrUri) {
-  var path = stripMetafilePrefix(pathOrUri);
-  if (path.startsWith("video/")) {
-    return true;
-  }
-  return VIDEO_EXTENSIONS.has(splitExtension(path).extension);
-}
-function normalizeVideoMetafileUri(pathOrUri) {
-  if (!isVideoMetafileUri(pathOrUri)) {
-    return pathOrUri;
-  }
-  return "".concat(METAFILE_PREFIX, "video/").concat(getMetafilePinId(pathOrUri));
 }
 
 /***/ }),
